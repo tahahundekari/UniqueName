@@ -32,9 +32,17 @@ class QueryProcessorTest {
 
 	@Test
 	void testAddNumbers() {
-		String actual = queryProcessor.process("what is 9 plus 0");
-		if (!actual.contains("9")) {
+		String actual = queryProcessor.process("what is 15 plus 27");
+		if (!actual.contains("42")) {
 			fail("Does not add correctly");
+		}
+	}
+
+	@Test
+	void testLargestNumber() {
+		String actual = queryProcessor.process("which of the following numbers is the largest: 31, 646");
+		if (!actual.contains("646")) {
+			fail("Does not get largest");
 		}
 	}
 
