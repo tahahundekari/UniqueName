@@ -30,4 +30,12 @@ class QueryProcessorTest {
 		}
 	}
 
+	@Test
+	void testAddNumbers() {
+		String actual = queryProcessor.process("what is 9 plus 0");
+		if (!actual.contains("9")) {
+			fail("Does not add correctly");
+		}
+	}
+
 }
