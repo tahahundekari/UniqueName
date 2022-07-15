@@ -15,8 +15,16 @@ public class QueryProcessor {
            return "Taha";
         } else if (query.contains("plus")) { // TODO extend the programm here
             String[] queryStuff = query.split(" ");
-            Integer result = Integer.parseInt(queryStuff[2]) + Integer.parseInt(queryStuff[4]);
-            return result.toString();
+            Integer result = 0;
+            try {
+                result = Integer.parseInt(queryStuff[2]) + Integer.parseInt(queryStuff[4]);
+            }
+            catch (Exception e) {
+                result = 0;
+            }
+            finally {
+                return result.toString();
+            }
         }
         else if (query.contains("largest")) {
             query = query.substring(47);
